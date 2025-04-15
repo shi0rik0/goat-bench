@@ -21,33 +21,12 @@ GOAT-Bench is a benchmark for the Go to Any Thing (GOAT) task where an agent is 
 
 ## :hammer: Installation
 
-Create the conda environment and install all of the dependencies. Mamba is recommended for faster installation:
+Create the conda environment and install all of the dependencies.
+
 ```bash
-# Create conda environment. Mamba is recommended for faster installation.
-conda_env_name=goat
-mamba create -n $conda_env_name python=3.7 cmake=3.14.0 -y
-mamba install -n $conda_env_name \
-  habitat-sim=0.2.3 headless pytorch cudatoolkit=11.3 \
-  -c pytorch -c nvidia -c conda-forge -c aihabitat -y
-
-# Install this repo as a package
-mamba activate $conda_env_name
-pip install -e .
-
-# Install habitat-lab
-git clone --branch v0.2.3 git@github.com:facebookresearch/habitat-lab.git
-cd habitat-lab
-pip install -e habitat-lab
-pip install -e habitat-baselines
-
-pip install -r requirements.txt
-pip install git+https://github.com/openai/CLIP.git
-pip install ftfy regex tqdm GPUtil trimesh seaborn timm scikit-learn einops transformers
-
-git clone  https://github.com/facebookresearch/eai-vc.git
-cd eai-vc
-
-pip install -e vc_models/
+conda create -n goat python=3.8 cmake
+conda activate goat
+bash setup.sh
 ```
 
 

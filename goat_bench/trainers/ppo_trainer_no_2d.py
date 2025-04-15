@@ -350,16 +350,16 @@ class GoatPPOTrainer(PPOTrainer):
                     episode_state_copy["episode_id"] = current_episodes_info[
                         i
                     ].episode_id
-                    episode_state_copy["subtasks"] = current_episodes_info[
-                        i
-                    ].tasks
+                    # episode_state_copy["subtasks"] = current_episodes_info[
+                    #     i
+                    # ].tasks
                     episode_state_copy["success_by_subtask"] = infos[i][
                         "success.subtask_success"
                     ]
                     episode_state_copy["spl_by_subtaskl"] = infos[i][
                         "spl.spl_by_subtask"
                     ]
-                    print("episode_state_copy", current_episodes_info[i].tasks)
+                    # print("episode_state_copy", current_episodes_info[i].tasks)
                     episode_state_copy["actions"] = saved_actions[i]
                     episode_metrics.append(episode_state_copy)
 
